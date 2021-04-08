@@ -1,41 +1,50 @@
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class AccountManager {
+	
+	Scanner sc = new Scanner(System.in);
+	
+	
+	public void run() {
+		 displayMenu();
+		 int answer = sc.nextInt();
+		 switch (answer) {
+		 case 1: logIn();
+		 break;
+	 	 case 2: createAccount();
+	 	 break;
+	 	 case 3: resetPassword();
+	 	 break;		
+	 		
+		 } 
+		run();
+	}
+	
+		 
+		 
+	
+	 
+	 public void displayMenu() {
+		 
+	 System.out.println("Press any number from the menu below to prosses through out the application.");
+		 System.out.println("1.Log in.");
+		 System.out.println("2.Create anaccount");
+		 System.out.println("3.Reset password");
+		 
+	 }
+	 
+	 public void logIn() {
+		 // connect the method with an account method and creat account as a user object with all atributes
+	 }
+	 
+	 public void createAccount() {
+		 
+	 }
+	 public void resetPassword() {
+		 
+	 }
 
-    List<Account> users = new ArrayList();
-    public void run() {
+	
 
-        System.out.println("Menu:");
-        System.out.println("Here we create an account");
-        Scanner sc = new Scanner (System.in);
+} 
 
-        System.out.println("In order to create an account you need to enter following info :n/" +
-                "1.Your full name,");
-         String name = sc.next();
-
-         System.out.println( "2. Email address,");
-         String email = checkEmail(sc.next());
-
-         System.out.println( "3. Set a password");
-         String password = sc.next();
-         createAccount(name,email,password);
-
-    }
-
-    public void createAccount(String name , String email, String password){
-        Account newUser = new Account(name,email, password);
-        users.add(newUser);
-    }
-
-    public String checkEmail (String email){
-        if ( email.contains("@")){
-            return email;
-
-        }else {
-            return "Wrong email, try again!";
-        }
-    }
-
-}
