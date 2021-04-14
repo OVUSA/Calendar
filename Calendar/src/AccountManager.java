@@ -6,7 +6,7 @@ public class AccountManager {
 	private LinkedList<Account> accountsList= new LinkedList<>();
 	EmailCheck emailCheck ;
 	Account account ;
-	
+
 	public void run() {
 		 displayMenu();
 		 
@@ -21,7 +21,6 @@ public class AccountManager {
 	 	 break;		
  		
 		 } 
-	
 	}
 	
 	 public void displayMenu() {
@@ -29,10 +28,10 @@ public class AccountManager {
 	 System.out.println("Press any number from the menu below to prosses through out the application.");
 		 System.out.println("1.Log in.");
 		 System.out.println("2.Create an account");
-		 System.out.println("3.Reset password");
-		 
+		 System.out.println("3.Reset password"); 
 	 }
- 
+	 
+	 
 	 public void logIn() {
 		 
 		Scanner sr = new Scanner (System.in);
@@ -47,11 +46,10 @@ public class AccountManager {
 		account = findByEmail(email);
 		 
 		if (account.getPassword().equals(password)) {
-			 // display user account
+			 // displays user account
 			account.toString();
-		}	
+		}		
 	 }
-	
 	 
 	 public void createAccount() {
 		 System.out.print(" Enter your full name.\n");
@@ -81,8 +79,10 @@ public class AccountManager {
 	 
 	 }		 
 	 
-	 	Account findByEmail(String email) {
-		    return accountsList.stream().filter(account -> email.equals(account.getEmail())).findFirst().orElse(null);
-		}
+	 
+	Account findByEmail(String email) {
+		  return accountsList.stream().filter(account -> email.equals(account.getEmail())).findFirst().orElse(null);
+	} 
+	
 }
 
