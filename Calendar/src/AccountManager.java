@@ -55,9 +55,12 @@ public class AccountManager {
 		 System.out.print(" Enter your full name.\n");
 		 String fullName = sc.next();
 		 		 
-		 System.out.print(" Enter your email.\n");
-		 String email = sc.nextLine();
+		 System.out.print(" Enter your email.");
+		 sc.nextLine();
+			
+		 String email= sc.next();
 		 
+		 System.out.println();
 		//emailCheck.checkEmail(email);
 		 System.out.print(" Enter your password.");
 		 String password = sc.next();
@@ -66,6 +69,8 @@ public class AccountManager {
 		 Account ac = new Account (fullName,email,password);
 		 accountsList.add(ac); 
 		 System.out.println( ac.toString());
+		 System.out.println();
+
 
 		 run();
 	 }
