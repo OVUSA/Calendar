@@ -24,12 +24,14 @@ public class AccountManager {
 	}
 	
 	 public void displayMenu() {
-		 
+	 System.out.println();
 	 System.out.println("Press any number from the menu below to prosses through out the application.");
 		 System.out.println("1.Log in.");
 		 System.out.println("2.Create an account");
 		 System.out.println("3.Reset password"); 
 	 }
+	 
+	 
 	 
 	 
 	 public void logIn() {
@@ -41,14 +43,17 @@ public class AccountManager {
 		//emailCheck.checkEmail(email);
 		 
 		System.out.println("Enter you password.");
-		String password = sr.next();
 		
+		
+		String password = sr.next();
 		account = findByEmail(email);
 		 
 		if (account.getPassword().equals(password)) {
-			 // displays user account
-			account.toString();
-		}		
+			viewAccountInfo(account);
+		}	else {
+			System.out.println("Email doesn't mach password, try again");
+			run();
+		}
 	 }
 	 
 	 public void createAccount() {
@@ -66,13 +71,10 @@ public class AccountManager {
 		 String password = sc.next();
 		 
 		 
-		 Account ac = new Account (fullName,email,password);
-		 accountsList.add(ac); 
-		 System.out.println( ac.toString());
-		 System.out.println();
-
-
-		 run();
+		 account = new Account (fullName,email,password);
+		 accountsList.add(account); 
+		 viewAccountInfo(account);
+	
 	 }
 	 
 	 public void resetPassword() {
@@ -80,14 +82,20 @@ public class AccountManager {
 		 String email = sc.next();
 		 
 		 System.out.println("Enter your new password");
-		 String newPassoword = sc.next();
-	 
+		 String newPassword = sc.next();
+		 account = findByEmail(email);
+		 account.resetPassword(newPassword);
+		 
+		 viewAccountInfo(account);
 	 }		 
 	 
 	 
-	Account findByEmail(String email) {
+	  Account findByEmail(String email) {
 		  return accountsList.stream().filter(account -> email.equals(account.getEmail())).findFirst().orElse(null);
 	} 
 	
-}
-
+	
+	public void viewAccountInfo(Account user) {
+		System.out.println(user.toString());
+		scheduleManager.menu(user);
+	}
