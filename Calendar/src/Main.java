@@ -1,8 +1,8 @@
 public class Main {
     public static void main(String [] args){
 
-        AccountManager forUser = new AccountManager();
-        forUser.run();
-
+        AccountManager am = new AccountManager();
+	    am.run();
+		
     }
 }
