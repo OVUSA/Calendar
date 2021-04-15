@@ -1,4 +1,5 @@
-public class Location implements EventManager {
+public class Location  {
+    Events event;
     private String address;
     @Override
     public void setLocation() {
