@@ -1,5 +1,24 @@
+/* General styling*/
+
 body {
-  background: color #ceceeb;
+  font-family: Open Sans, sans-serif;
+  font-size: 16px;
+  text-align: center;
+  color: black;
+}
+
+.button {
+  background-color: rgb(75, 130, 194);
+  color: white;
+  text-align: center;
+  font-size: 16px;
+  display: inline-block;
+  padding: auto;
+  border-radius: 8px;
+}
+button:hover {
+  background-color: blue;
+  color: white;
 }
 
 .bottom-line {
@@ -22,6 +41,7 @@ body {
   border: 1px solid #ebebeb;
   width: 100%;
   z-index: 9999;
+  color: black;
 }
 
 .row {
@@ -33,9 +53,21 @@ body {
 /*home page style */
 .home-page-form {
   border-style: solid;
+  margin-top: 50px;
   padding: 20px 20px 20px 20px;
   border-color: lightslategrey;
   border-radius: 15px;
+  background-color: white;
+  border: 1px;
+  box-shadow: 1px 1px 2px 2px #d6d4d4;
+}
+
+.terms_and_conditions {
+  padding-left: 0;
+  font-size: 13px;
+}
+ul .nav nav-pills {
+  margin-right: 20px;
 }
 
 /*login page */
@@ -44,4 +76,8 @@ body {
   float: left;
   width: 1700px;
   padding: 0 500px;
+}
+#conditions {
+  color: blue;
+  text-decoration: none;
 }
