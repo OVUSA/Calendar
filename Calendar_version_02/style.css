@@ -1,0 +1,47 @@
+body {
+  background: color #ceceeb;
+}
+
+.bottom-line {
+  text-align: center;
+  padding: 20px 0 20px 40px;
+  bottom: 8px;
+}
+.rows container-fluid {
+  text-align: center;
+  margin-left: 40%;
+  padding-left: 40%;
+}
+#Start-button {
+  background-color: lightblue;
+  text-decoration-color: lightgray;
+}
+.navbar {
+  height: 64px;
+  background: #fff;
+  border: 1px solid #ebebeb;
+  width: 100%;
+  z-index: 9999;
+}
+
+.row {
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 20px;
+}
+
+/*home page style */
+.home-page-form {
+  border-style: solid;
+  padding: 20px 20px 20px 20px;
+  border-color: lightslategrey;
+  border-radius: 15px;
+}
+
+/*login page */
+.main {
+  position: relative;
+  float: left;
+  width: 1700px;
+  padding: 0 500px;
+}
